@@ -1,0 +1,62 @@
+body{
+    width: 100%;
+}
+.text_laundry{
+    padding: 40px;
+    background-color: white;
+    height: 1400px;
+    /* width: 100%; */
+}
+
+.card{
+    background-color: aqua;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button{
+    background-color: red;
+ 
+}
+
+.button:hover{
+    background-color: brown;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.number{
+    padding: 8px;
+  
+}
+
+.numberDesired{
+    background-color: red;
+    padding: 4px;
+}
+
+.conditional{
+    background-color: red;
+    padding: 4px;
+}
+
+.error{
+    background-color: blueviolet;
+    padding: 4px;
+}
+
+.red{
+    background-color:red;
+}
+
+.white{
+    background-color: white;
+}

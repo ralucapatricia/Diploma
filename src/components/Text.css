@@ -1,0 +1,10 @@
+body{
+    width: 100%;
+}
+
+.text{
+    padding: 40px;
+    background-color: white;
+    height: 1400px;
+    /* width: 100%; */
+}
