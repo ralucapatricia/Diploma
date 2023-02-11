@@ -1,4 +1,4 @@
-body{
+body {
   width: 100%;
 }
 
@@ -25,7 +25,7 @@ body{
 
 .row1 {
   display: flex;
-  gap: 950px;
+  gap: 850px;
   flex-direction: row;
   text-align: center;
 }
@@ -64,7 +64,7 @@ body{
   min-width: 150px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  top:90px;
+  top: 90px;
   width: 10%;
   /* padding-left: 10x;  */
   text-align: center;
@@ -78,7 +78,7 @@ body{
   display: block;
 }
 
-.navLink{
+.navLink {
   color: rgb(252, 193, 54);
 }
 
@@ -87,12 +87,18 @@ body{
   cursor: pointer;
   color: black;
 }
-.link:hover{
+
+.link:hover {
   background-color: rgb(252, 193, 54);
   cursor: pointer;
   color: black;
 }
+
 .dropdown:hover .dropdown_content {
   display: block;
 }
 
+.logout {
+  margin-right: 20px;
+  margin-top: 25px;
+}
