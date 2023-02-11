@@ -61,9 +61,6 @@ export default function BaschetField() {
                     <button className="button1" onClick={Base2Handler}>Baza 2</button>
                 </div>
             </div>
-
-            <div className="vl">
-            </div>
         </div>
     );
 }

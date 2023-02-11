@@ -60,3 +60,11 @@ body{
     flex-direction: column;
   
 }
+.position_contact{
+    margin-left: 200px;
+}
+
+.map_container{
+    height: 873px;
+    width: 1868px;
+}

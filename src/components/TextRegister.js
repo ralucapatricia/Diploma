@@ -1,30 +1,99 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import { UserAuth } from '../contexts/AuthContext';
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+
 
 import "./TextRegister.css";
 import AuthenticationCard from "./AuthenticationCard";
+import CardMessage from './CardMessage';
 import logo from "../IMG/logo.png";
+import LoadingPage from './LoadingPage';
 
 export default function Register() {
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [message, setMessage] = useState("");
+    const [messagePass, setMessagePass] = useState("");
+    const [messagePass2, setMessagePass2] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [confirmError, setConfirmError] = useState('');
     const [error, setError] = useState('')
+    const [errEmail, setErrEmail] = useState(false)
+    const [errPass, setErrPass] = useState(false)
+    const [errConfirmPass, setErrConfirmPass] = useState(false)
     const { createUser } = UserAuth();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [passwordShown, setPasswordShown] = useState(false);
+    const [isAuthenticating, setIsAuthenticating] = useState(false);
 
-    const submitHandler = async (e) => {
-        e.preventDefault();
-        setError('');
+    const regEx = "@student.upt.ro";
+    const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).*$/
+
+    const submitHandler = async (event) => {
+        event.preventDefault();
+        setIsAuthenticating(true);
         try {
-            await createUser(email, password);
-            navigate("/")
-        } catch (e) {
-            setError(e.message);
-            console.log(e.message);
+            if (email.search(regEx) < 0) {
+                setMessage("Este nevoie de email de student! (prenume.nume@student.upt.ro)");
+                setError("Nu s-a putut crea cont!");
+                setErrEmail(true);
+            }
+            else if (password !== confirmPassword) {
+                setConfirmError("Parolele nu se potrivesc!");
+                setError("Nu s-a putut crea cont!");
+                setErrConfirmPass(true);
+            }
+            else if (!regExPass.test(password)) {
+                setMessagePass("Parola este invalida! Trebuie sa contina cel putin 6 caractere, o cifra, ");
+                setMessagePass2("o litera mica, o litera mare si un carcater special.");
+                setError("Nu s-a putut crea cont!");
+                setErrPass(true);
+            }
+            else {
+                await createUser(email, password);
+                navigate("/HomePage")
+            }
+        } catch (error) {
+            setError("Nu s-a putut crea cont! Acest email a fost folosit deja!");
         }
+        setIsAuthenticating(false);
     }
+
+
+    function setEmailHandler(event) {
+        setEmail(event.target.value);
+        setErrEmail(false);
+
+    }
+
+    function setPasswordHandler(event) {
+        setPassword(event.target.value)
+        setErrPass(false);
+    }
+
+    function setConfirmPasswordHandler(event) {
+        setConfirmPassword(event.target.value)
+        setErrConfirmPass(false);
+    }
+
+    const togglePassword = () => {
+
+        setPasswordShown(!passwordShown);
+    };
+
+    let eye = <AiFillEyeInvisible className='eye' onClick={togglePassword} />
+    if (passwordShown) {
+        eye = <AiFillEye className='eye' onClick={togglePassword} />
+    }
+
+    if (isAuthenticating) {
+        return (
+            <LoadingPage />
+        )
+    }
+
     return (
         <body>
             <AuthenticationCard>
@@ -35,27 +104,27 @@ export default function Register() {
                 <form onSubmit={submitHandler}>
                     <div className="user_date" >
                         <div className="spacing_label" >
-                            <label for="EmailBox"><h4 style={{ marginLeft: '217px' }}>Email</h4></label>
-                            <p style={{ textAlign: 'center', marginBottom: '30px' }}>< input className="email_parola" type="email" name="email" id="EmailBox" onChange={(e) => setEmail(e.target.value)}
+                            <label for="EmailBox"><h4 style={{ marginLeft: '270px' }}>Email</h4></label>
+                            <p style={{ textAlign: 'center' }}>< input className="email_parola" type="email" name="email" id="EmailBox" onChange={setEmailHandler}
                                 placeholder="Introduceti email-ul" required></input></p>
+                            <p style={{ textAlign: 'center' }}>{errEmail && <CardMessage>{message} </CardMessage>}</p>
                         </div>
                         <div className="spacing_label">
-                            <p><label for="PasswordBox"><h4 style={{ marginLeft: '217px' }}>Parola</h4></label></p>
-                            <p style={{ textAlign: 'center' }}><input type="password" onChange={(e) => setPassword(e.target.value)}
-                                className="email_parola" name="pass" id="PasswordBox" placeholder="Introduceti Parola" required></input></p>
+                            <p><label for="PasswordBox"><h4 style={{ marginLeft: '270px' }}>Parola</h4></label></p>
+                            <p style={{ textAlign: 'center', marginLeft: '20px' }}><input type={passwordShown ? "text" : "password"} onChange={setPasswordHandler}
+                                className="email_parola" name="pass" id="PasswordBox" placeholder="Introduceti Parola" required></input> {eye}</p>
+
+                            <p style={{ textAlign: 'center' }}>{errPass && <CardMessage><p>{messagePass}</p><p>{messagePass2}</p></CardMessage>}</p>
+                            <p><label for="ConfirmPasswordBox"><h4 style={{ marginLeft: '270px' }}>Confirmati Parola</h4></label></p>
+                            <p style={{ textAlign: 'center', marginLeft: '20px' }}><input type={passwordShown ? "text" : "password"} onChange={setConfirmPasswordHandler}
+                                className="email_parola" name="ConfirmPass" id="ConfirmPasswordBox" placeholder="Confirmati Parola" required></input>{eye}</p>
+                            <p style={{ textAlign: 'center' }}>{errConfirmPass && <CardMessage>{confirmError}</CardMessage>}</p>
                         </div>
-                         {/* <div className="spacing_label">
-                            <p><label for="CPasswordBox"><h4 style={{ marginLeft: '217px' }}>Confirmati Parola</h4></label></p>
-                            <p style={{ textAlign: 'center' }}><input type="Cpassword" className="email_parola" name="Cpass" id="CPasswordBox" placeholder="Confirmati Parola" required></input></p>
-                        </div>
-                        <div className="spacing_label">
-                            <p><label for="Name"><h4 style={{ marginLeft: '217px' }}>Nume complet</h4></label></p>
-                            <p style={{ textAlign: 'center' }}><input type="name" className="email_parola" name="name" id="NameBox" placeholder="Introduceti Numele" required></input></p>
-                        </div> */}
                     </div>
                     <div style={{ textAlign: 'center' }}>
-                        <button type="submit" ><h4>Creaza cont</h4></button>
-                        <p><NavLink className='cont' to="/">Autentificare</NavLink></p>
+                        <button className='button_style' type="submit" ><h4>Creează cont</h4></button>
+                        <p><NavLink className='cont' to="/">Ai deja cont?</NavLink></p>
+                        {(errEmail || errPass || errConfirmPass || error) && <CardMessage>{error}</CardMessage>}
                     </div>
                 </form>
             </AuthenticationCard>

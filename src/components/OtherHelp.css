@@ -1,46 +1,35 @@
-.bases{
-    position: absolute;
-    margin-left:400px;
-    margin-top:60px;
-    font-family: 'Coda Caption', sans-serif;
-} 
+.bases_other {
+  position: absolute;
+  margin-left: 400px;
+  margin-top: 60px;
+  font-family: 'Coda Caption', sans-serif;
+}
 
-/* .input[type=text], select, textarea {
-    width: 100%; 
-    padding: 12px; 
-    border: 1px solid rgb(242, 199, 113); 
-    border-radius: 4px; 
-    box-sizing: border-box; 
-    margin-top: 6px;
-    margin-bottom: 16px; 
-    resize: vertical;
-  } */
-  .text{
-    width: 100%; 
-    padding: 12px; 
-    border: 1px solid rgb(242, 199, 113); 
-    border-radius: 4px; 
-    box-sizing: border-box; 
-    margin-top: 6px;
-    margin-bottom: 16px; 
-    resize: vertical;
-  }
-  .submit{
-    background-color: rgb(244, 180, 6);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .submit:hover{
-    background-color: rgb(243, 231, 160);
-    color:black;
-  }
-  
-  
-  /* .input[type=submit]:hover {
-    background-color: rgb(243, 231, 160);
-    color:black;
-  } */
+.text {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(242, 199, 113);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.submit {
+  background-color: rgb(244, 180, 6);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: rgb(243, 231, 160);
+  color: black;
+}
+
+.incercare_positions{
+  margin-top:420px;
+}

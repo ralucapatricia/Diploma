@@ -31,6 +31,11 @@ body{
     font-size:50px;
 }
 
+.title_size:hover{
+    cursor: pointer;
+    text-shadow: 2px 2px 8px #eabb70;
+}
+
 .footer_content a:hover,
 .footer_content a.active {
   color: #eabb70;

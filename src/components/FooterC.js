@@ -2,6 +2,7 @@ import "./FooterC.css";
 import adresa from "../IMG/adresa.jpg";
 import fax from "../IMG/fax.png";
 import email from "../IMG/email.png";
+import Map from "./Map";
 
 export default function FooterC() {
     return (
@@ -37,7 +38,7 @@ export default function FooterC() {
                         </div>
                     </div>
 
-                    <div>
+                    <div className="position_contact">
                         <h3 className="written">Baze <span className="firstLeter">Sportive</span></h3>
                         <div className="baze">
                             <b style={{ marginTop: '20px' }}>Baza sportivă nr.1</b>
@@ -59,7 +60,9 @@ export default function FooterC() {
                    
                 </div>
             </div>
-
+            <div className="map_container">
+            <Map />
+            </div>
         </div>
     );
 }

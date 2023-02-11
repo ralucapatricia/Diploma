@@ -2,7 +2,7 @@ import "./LaundryHelp.css";
 
 export default function LaundryHelp() {
     return (
-        <div className="laundry">
+        <form className="laundry">
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Coda+Caption&display=swap');
             </style>
@@ -29,8 +29,8 @@ export default function LaundryHelp() {
             </select>
             <label for="subject">Subject</label>
             <textarea id="subject" name="subject" placeholder="Write something.." style={{ height: '200px' }}></textarea>
-            <input className="input" type="submit" value="Submit"></input>
-        </div>
+            <button className="input" type="submit" value="Submit">Submit</button>
+        </form>
     );
 }
 

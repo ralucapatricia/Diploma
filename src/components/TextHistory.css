@@ -6,5 +6,10 @@
     padding: 50px;
     background-color: white;
     height: 1400px;
-    /* width: 100%; */
+    width: 100%;
+}
+
+.text_history .title {
+    /* text-align: center; */
+    color: black
 }

@@ -1,8 +1,10 @@
 import "./FooterA.css";
 import campus from "../IMG/campus.jpg";
 
+
 export default function FooterA() {
     return (
+   
         <div className="footerA">
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Coda+Caption&display=swap');
@@ -24,5 +26,6 @@ export default function FooterA() {
                 <img src={campus} alt='' width="900" height="900" />
             </div>
         </div>
+      
     );
 }

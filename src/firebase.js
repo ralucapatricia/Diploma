@@ -1,16 +1,19 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCpbVWjGldWk3DG8Pn3zUPjw5_LunmIPeI",
-    authDomain: "sportbasesupt.firebaseapp.com",
-    databaseURL: "https://sportbasesupt-default-rtdb.firebaseio.com",
-    projectId: "sportbasesupt",
-    storageBucket: "sportbasesupt.appspot.com",
-    messagingSenderId: "192205599225",
-    appId: "1:192205599225:web:a3ec74dc8eaa579d938d28"
+  apiKey: "AIzaSyCv2mWAREHL1NeSveVSUZ9Vfg6G9fTcXmM",
+  authDomain: "sport-base-18c43.firebaseapp.com",
+  projectId: "sport-base-18c43",
+  storageBucket: "sport-base-18c43.appspot.com",
+  messagingSenderId: "244011428452",
+  appId: "1:244011428452:web:b01dc10b29c4bdcd454d71"
 };
 
 const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
 export const auth = getAuth(app);
+export const storage = getStorage(app);
 export default app

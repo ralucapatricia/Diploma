@@ -1,0 +1,13 @@
+.elipse{
+    height: 50%; 
+    width: 400px;
+    position: absolute;
+    top: 90%;
+    left: 55%;
+    transform: translate(15%, -160%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid grey;
+    box-shadow: 0px 0px 18px 0px rgba(0, 30, 130, 0.75);
+}
+

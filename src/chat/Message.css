@@ -1,0 +1,38 @@
+.send{
+    background-color:  rgb(244, 180, 6);
+    margin: 1rem 1rem 1rem auto ;
+	border-radius: 1.125rem 1.125rem 0 1.125rem;
+	color: black;
+    padding: 0.1rem 0.5rem;
+    text-align:left;
+    box-sizing: border-box;
+    width: fit-content;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.075), 0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.025em;
+}
+
+.received{
+    background-color:  rgb(255, 223, 134);
+    margin: 1rem;
+	border-radius: 1.125rem 1.125rem 1.125rem 0;
+	color: black;
+    padding: 0.1rem 0.5rem;
+    text-align:left;
+    box-sizing: border-box;
+    width: fit-content;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.075), 0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.025em;
+}
+
+.email_send{
+    color: rgb(150, 148, 148);
+    margin: 1rem 1rem 1rem auto ;
+    text-align:right;
+}
+
+.email_received{
+    color: rgb(150, 148, 148);
+    margin: 1rem;
+    text-align:left;
+}
+ 

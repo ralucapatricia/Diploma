@@ -1,6 +1,6 @@
 body {
     margin-top: 50px;
-    height: 1200px;
+    /* height: 1200px; */
     width: 100%;
 }
 
@@ -62,4 +62,18 @@ body {
 .cont:hover{
     color: white;
     text-shadow: 2px 2px 8px #eabb70;
+}
+
+.card{
+    height: 800px;
+}
+
+.custom_button:hover{
+   cursor: pointer;
+}
+
+.error2{
+    color:#ff0000;
+    text-shadow: 2px 2px 8px rgb(244, 115, 115);
+    width: 25%;
 }

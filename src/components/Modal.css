@@ -1,0 +1,81 @@
+html{
+    width: 100%;
+}
+
+.overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top:0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(183, 180, 180, 0.5);
+}
+.modal{
+    text-align: center;
+    padding: 50px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0px 0px 18px 0px rgba(0, 30, 130, 0.75);
+}
+
+.modal_team{
+    text-align: center;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 18px 0px rgba(0, 30, 130, 0.75);
+}
+.btnContainer {
+    display: flex;
+    padding: 1rem 1rem;
+}
+
+.btnContainer button {
+    width: 100%;
+    margin: .10rem;
+    padding: 16px 0;
+    border: 1px solid black;
+}
+
+.btnPrimary {
+    background-color: black;
+    color: white;
+}
+
+.btnPrimary:hover{
+    background-color: white;
+    color:black;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.bold:hover{
+    cursor: pointer;
+}
+
+.bold_team {
+    font-weight: 100;
+    margin-top: 100px;
+    
+}
+.bold_container{
+    width: 100px;
+    height: 50px;
+    margin: .1rem;
+    padding: 1px 0;
+    border: 1px solid black;
+    background-color: rgb(244, 180, 6);
+}
+
+.bold_team:hover{
+    cursor: pointer;
+    background-color: white;
+}
+
+.bold_container:hover{
+    background-color: white;
+}

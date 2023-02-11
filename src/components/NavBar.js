@@ -21,8 +21,10 @@ export default function NavBar() {
         }
     };
 
-    return (
-        <div className="navbar row1">
+    return ( 
+        <>
+        {(user) && 
+            <div className="navbar row1">
             <div style={{ marginLeft: '20px', }}>
                 <NavLink to="/HomePage"><img src={home} alt='' width="40" height="40" /></NavLink>
             </div>
@@ -39,13 +41,12 @@ export default function NavBar() {
                         <NavLink className="navLink" to="/TerenTenis">Teren Tenis nr.4</NavLink>
                     </div>
                 </div>
-                <NavLink to="Laundry" className="link">Spalatorie</NavLink>
                 <NavLink to="History" className="link">Istoric</NavLink>
-                <NavLink to="Profile" className="link">UserName</NavLink>
+                <NavLink to="Profile" className="link">Profil</NavLink>
                 <img onClick={logoutHandler} className="logout" src={logoutphoto} alt='' width="40" height="40" />
             </div>
-
-        </div>
-
+            </div>
+    }
+        </>
     );
 }

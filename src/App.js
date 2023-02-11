@@ -6,7 +6,6 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
-import Laundry from "./pages/Laundry";
 import History from "./pages/History";
 import Profile from "./pages/Profile";
 import MinifotbalFieldPage from "./pages/MiniFotbalFieldPage";
@@ -16,40 +15,32 @@ import TennisFieldPage from "./pages/TennisFieldPage";
 import HomePage from "./pages/HomePage";
 import Register from "./pages/Register";
 import { AuthContextProvider } from "./contexts/AuthContext";
-import ProtectedRoute from "./components/ProtectedRoute";
-import { UserAuth } from './contexts/AuthContext';
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
-
-  // const { user } = UserAuth();
   return (
-    <div>
       <AuthContextProvider>
         <NavBar/>
-        {/* {user && <NavBar /> } */}
         <main>
+        <ScrollToTop/>
           <Routes>
             <Route path="/" element={< FirstPage />} exact />
-            <Route path="/Laundry" element={<ProtectedRoute>< Laundry /></ProtectedRoute>} />
-            <Route path="/History" element={<ProtectedRoute>< History /></ProtectedRoute>} />
-            <Route path="/Profile" element={<ProtectedRoute>< Profile /></ProtectedRoute>} />
-            <Route path="/Privacy" element={< Privacy />} />
-            <Route path="/Terms" element={< Terms />} />
-            <Route path="/AboutUs" element={< AboutUs />} />
-            <Route path="/ContactUs" element={< ContactUs />} />
-            <Route path="/TerenMinifotfal" element={<ProtectedRoute>< MinifotbalFieldPage /></ProtectedRoute>} />
-            <Route path="/TerenHandbal" element={<ProtectedRoute>< HandballFieldPage /></ProtectedRoute>} />
-            <Route path="/TerenBaschet" element={<ProtectedRoute>< BaschetFieldPage /></ProtectedRoute>} />
-            <Route path="/TerenTenis" element={<ProtectedRoute>< TennisFieldPage /></ProtectedRoute>} />
-            <Route path="/CreazaCont" element={< Register />} />
-            <Route path="/HomePage" element={<ProtectedRoute>< HomePage /></ProtectedRoute>} />
+            <Route path="/History" element={< History />} />
+            <Route path="/Profile" element={< Profile />} />
+            <Route path="/Ajutor" element={< Privacy />} />
+            <Route path="/FolosireaAplicatiei" element={< Terms />} />
+            <Route path="/DespreNoi" element={< AboutUs />} />
+            <Route path="/Contact" element={< ContactUs />} />
+            <Route path="/TerenMinifotfal" element={< MinifotbalFieldPage />} />
+            <Route path="/TerenHandbal" element={< HandballFieldPage />} />
+            <Route path="/TerenBaschet" element={< BaschetFieldPage />} />
+            <Route path="/TerenTenis" element={< TennisFieldPage />} />
+            <Route path="/CreeazaCont" element={< Register />} />
+            <Route path="/HomePage" element={< HomePage />} />
           </Routes>
         </main>
         <Footer />
       </AuthContextProvider>
-
-    </div>
   );
 }
-
 export default App;

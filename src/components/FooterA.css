@@ -1,6 +1,3 @@
-body{
-    width: 100%;
-}
 .footerA {
     margin-top: 50px;
     padding: 16px;
@@ -8,6 +5,7 @@ body{
     height: 1400px;
     /* width: 100%; */
     font-family: 'Coda Caption', sans-serif;
+    /* height: 100%; */
 }
 
 .footerA .title {
@@ -28,8 +26,8 @@ body{
     margin-right: 80px;
 }
 
-.footerA .firstLeter{
+.footerA .firstLeter {
     font-family: 'Notable', sans-serif;
-    color: rgb(255, 208, 0) ;
+    color: rgb(255, 208, 0);
     font-size: larger;
 }
